@@ -37,8 +37,10 @@ for item in listing:
     dic_by_name[item['name']]=str(item['id'])
 dic['symbol']=dic_by_symbol
 dic['name']=dic_by_name
+
+# This requires data source from http://api.bitcoincharts.com/v1/csv/coinbaseUSD.csv.gz
 with open('price_coinbase_minute_sort.json','r') as f:
-    priceDict  = json.load(f)
+    priceDict  = json.load(f) 
 
 #messages
 welcome_message = 'Hi! Welcome to xxxx. I\'m XX Bot. I\'ll help to answer any questions than you may have. Send /cancel to stop talking to me. \n\n You can also try /crypto and /deal to explore more !\n\n'
