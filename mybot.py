@@ -38,7 +38,8 @@ for item in listing:
 dic['symbol']=dic_by_symbol
 dic['name']=dic_by_name
 
-# This requires data source from http://api.bitcoincharts.com/v1/csv/coinbaseUSD.csv.gz
+# This requires data source from http://api.bitcoincharts.com/v1/csv/coinbaseUSD.csv.gz 
+# readPricefromCSV.py outputs price_coinbase_minute_sort.json (schedule update the json every day or so)
 with open('price_coinbase_minute_sort.json','r') as f:
     priceDict  = json.load(f) 
 
