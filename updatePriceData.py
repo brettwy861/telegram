@@ -60,7 +60,7 @@ for dateTime in dic.keys():
     dic[dateTime]=round(dic[dateTime]/vol[dateTime],2) # dic[t] = sum_{i}(pi*vi) / sum(v)
         
 
-fp = open('price_coinbase_sorted.json', 'w')
+fp = open('price_coinbase_minute_sort.json', 'w')
 json.dump(dic, fp, sort_keys=True, indent=2)
 fp.close()
 
