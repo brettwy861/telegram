@@ -5,9 +5,10 @@ scripts and bots for telegram
 ``` pip install python-telegram-bot```
 
 ## Function
-- Query all the cryptocurrency's price data in realtime
-- Query historical bitcoin price (require price data yielded from [this source](http://api.bitcoincharts.com/v1/csv/coinbaseUSD.csv.gz))
+- Query all the cryptocurrency's price data in realtime. Source: [https://coinmarketcap.com/](https://coinmarketcap.com/)
+- Query historical bitcoin price. Source: [http://bitcoincharts.com/](http://bitcoincharts.com/)
 - Basic user input logging
+- Basic deterministic tree-based chat.
 
 ### Note
 run ```python updatePriceData.py``` first. 
