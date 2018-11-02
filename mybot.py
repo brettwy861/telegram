@@ -44,10 +44,10 @@ with open('price_coinbase_minute_sort.json','r') as f:
     priceDict  = json.load(f) 
 
 #messages
-welcome_message = 'Hi! Welcome to xxxx. I\'m XX Bot. I\'ll help to answer any questions than you may have. Send /cancel to stop talking to me. \n\n You can also try /crypto and /deal to explore more !\n\n'
-final_message = 'if you need anything else, please /start here and I\'m here to help. \n\n You can also try /crypto and /deal to explore more ! '
+welcome_message = 'Hi! Welcome to xxxx. I\'m XX Bot. I\'ll help to answer any questions than you may have. Send /cancel to stop talking to me. \n\n You can also try /crypto /deal and /btcprice to explore more !\n\n'
+final_message = 'if you need anything else, please /start here and I\'m here to help. \n\n You can also try /crypto /deal and /btcprice to explore more ! '
 intro_message = 'The decentralized structure of blockchain technology provides a vast array of powerful and simple solutions which were never before thought possible.\n We empower and launch new blockchain ventures and equip established businesses with the competitive advantages of blockchain. Blockchain is an emerging technology that possesses many competitive advantages for both small startups and large corporations. We are accelerating the blockchain industry by making it accessible, applicable, and understandable.\n\n'
-message_3 = 'This is message_3 for xxxx \n\n'
+message_3 = 'This is message_3 for event A \n\n'
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -169,16 +169,16 @@ def price(bot, update):
     
 def deal(bot, update):
     user = update.message.from_user
-    deals_keyboard = [['Envilope Project'],['Other deals']]
+    deals_keyboard = [['Project A'],['Other deals']]
     #if update.message.text == 'I like deals!':
     update.message.reply_text('Currently, I have the following deals for you, check it out!\n', reply_markup = ReplyKeyboardMarkup(deals_keyboard, one_time_keyboard=True))
     logger.info("User %s is interested in token deals", user.first_name)
     return PROJECT
     
-def envilope(bot, update):
+def projectA(bot, update):
     user = update.message.from_user
     update.message.reply_text(message_3+final_message, reply_markup=ReplyKeyboardRemove())
-    logger.info("User %s is checking out envilope project", user.first_name)
+    logger.info("User %s is checking out project A", user.first_name)
     return ConversationHandler.END
     
 def otherproject(bot, update):
@@ -247,7 +247,7 @@ def error(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("BOT TOKEN")
+    updater = Updater("THIS IS YOUR BOT's TOKEN")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -270,7 +270,7 @@ def main():
             
             DEAL: [MessageHandler(Filters.text, deal)],
             
-            PROJECT: [RegexHandler('^(Envilope Project)$', envilope),
+            PROJECT: [RegexHandler('^(Project A)$', projectA),
                       RegexHandler('^(Other deals)$', otherproject)],
             
             BTCPRICE: [MessageHandler(Filters.text, btcprice)], 
