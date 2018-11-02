@@ -44,10 +44,10 @@ with open('price_coinbase_minute_sort.json','r') as f:
     priceDict  = json.load(f) 
 
 #messages
-welcome_message = 'Hi! Welcome to xxxx. I\'m XX Bot. I\'ll help to answer any questions than you may have. Send /cancel to stop talking to me. \n\n You can also try /crypto /deal and /btcprice to explore more !\n\n'
+welcome_message = 'Hi! Welcome to QuantTradingBot. I\'m TTBot. I\'ll help to answer any questions than you may have. Send /cancel to stop talking to me at anytime. \n\n You can also try /crypto /deal and /btcprice to explore more !\n\n'
 final_message = 'if you need anything else, please /start here and I\'m here to help. \n\n You can also try /crypto /deal and /btcprice to explore more ! '
 intro_message = 'The decentralized structure of blockchain technology provides a vast array of powerful and simple solutions which were never before thought possible.\n We empower and launch new blockchain ventures and equip established businesses with the competitive advantages of blockchain. Blockchain is an emerging technology that possesses many competitive advantages for both small startups and large corporations. We are accelerating the blockchain industry by making it accessible, applicable, and understandable.\n\n'
-message_3 = 'This is message_3 for event A \n\n'
+message_3 = 'This is message for Project A \n\n'
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -57,13 +57,13 @@ logger = logging.getLogger(__name__)
 
 # Assign each state with an integer
 OPTIONS, CRYPTO, PRICE, DEAL, PROJECT, CONTACT, NAME, EMAIL, CONTENT, BTCPRICE, CHECKPRICE= range(11)
-#.          start 
-#           Options
-# Crypto    Deal     Contact
-# Price     Project  Name
-#                    Email
-#                    Content
-#            END 
+#.              start 
+#               Options
+# Crypto  Btcprice     Deal      Contact
+# Price   Checkprice   Project   Name
+#                                Email
+#                                Content
+#                END 
 
 def getTicker(query_type, query_input):
     ticker_api = 'https://api.coinmarketcap.com/v2/ticker/'+ dic[query_type][query_input]
