@@ -11,6 +11,7 @@ import time
 import re
 import json
 import urllib.request as urlGet 
+#import urllib2 as urlGet 
 
 def unixTimeConversion(t):
     if type(t) == int and len(str(t))>10:
@@ -36,15 +37,14 @@ time.sleep(3)
 data = pd.read_csv('coinbaseUSD.csv.gz', compression='gzip', error_bad_lines=False)
 
 firstrow = list(data.keys())
-timestamp = list(data[firstrow[0]])
-priceUSD = list(data[firstrow[1]])
-volume = list(data[firstrow[2]])
+unixtimestamp = data[firstrow[0]]
+priceUSD = data[firstrow[1]]
+volume = data[firstrow[2]]
 
 dic={}
 vol={}
 #convert timestamp unix to date time string
-for idx,item in enumerate(timestamp):
-    timestamp[idx]=unixTimeConversion(item)
+timestamp = [unixTimeConversion(item) for item in Unixtimestamp]
 
 #init the dict
 dic = dict().fromkeys(timestamp,0)
