@@ -13,4 +13,6 @@ scripts and bots for telegram
 ### Note
 run ```python updatePriceData.py``` first. 
 
+dependency pandas 0.21.1 or newer version
+
 updatePriceData.py fetches coinbase BTCUSD trade history and outputs a date-price json file (one point per minute) required for this bot.
